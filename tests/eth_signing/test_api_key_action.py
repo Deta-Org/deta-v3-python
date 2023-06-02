@@ -1,9 +1,9 @@
 from web3 import Web3
 
-from dydx3.constants import NETWORK_ID_MAINNET
-from dydx3.eth_signing import SignWithWeb3
-from dydx3.eth_signing import SignWithKey
-from dydx3.eth_signing import SignEthPrivateAction
+from deta3.constants import NETWORK_ID_MAINNET
+from deta3.eth_signing import SignWithWeb3
+from deta3.eth_signing import SignWithKey
+from deta3.eth_signing import SignEthPrivateAction
 
 GANACHE_ADDRESS = '0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1'
 GANACHE_PRIVATE_KEY = (

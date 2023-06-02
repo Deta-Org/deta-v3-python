@@ -1,6 +1,6 @@
-from dydx3.constants import NETWORK_ID_GOERLI
-from dydx3.helpers.request_helpers import iso_to_epoch_seconds
-from dydx3.starkex.transfer import SignableTransfer
+from deta3.constants import NETWORK_ID_GOERLI
+from deta3.helpers.request_helpers import iso_to_epoch_seconds
+from deta3.starkex.transfer import SignableTransfer
 
 MOCK_PUBLIC_KEY = (
     '3b865a18323b8d147a12c556bfb1d502516c325b1477a23ba6c77af31f020fd'

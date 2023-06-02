@@ -26,5 +26,5 @@ jobs:
 
       - name: Test
         env:
-          V3_API_HOST: https://api.stage.dydx.exchange
+          V3_API_HOST: https://api.stage.deta.exchange
         run: tox

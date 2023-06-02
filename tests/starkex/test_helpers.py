@@ -1,10 +1,10 @@
-from dydx3.starkex.helpers import fact_to_condition
-from dydx3.starkex.helpers import generate_private_key_hex_unsafe
-from dydx3.starkex.helpers import get_transfer_erc20_fact
-from dydx3.starkex.helpers import nonce_from_client_id
-from dydx3.starkex.helpers import private_key_from_bytes
-from dydx3.starkex.helpers import private_key_to_public_hex
-from dydx3.starkex.helpers import private_key_to_public_key_pair_hex
+from deta3.starkex.helpers import fact_to_condition
+from deta3.starkex.helpers import generate_private_key_hex_unsafe
+from deta3.starkex.helpers import get_transfer_erc20_fact
+from deta3.starkex.helpers import nonce_from_client_id
+from deta3.starkex.helpers import private_key_from_bytes
+from deta3.starkex.helpers import private_key_to_public_hex
+from deta3.starkex.helpers import private_key_to_public_key_pair_hex
 
 
 class TestHelpers():

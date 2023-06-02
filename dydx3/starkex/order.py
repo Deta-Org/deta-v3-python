@@ -3,22 +3,22 @@ import math
 
 from collections import namedtuple
 
-from dydx3.constants import COLLATERAL_ASSET
-from dydx3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
-from dydx3.constants import ORDER_SIDE_BUY
-from dydx3.constants import SYNTHETIC_ASSET_ID_MAP
-from dydx3.constants import SYNTHETIC_ASSET_MAP
-from dydx3.starkex.constants import ONE_HOUR_IN_SECONDS
-from dydx3.starkex.constants import ORDER_FIELD_BIT_LENGTHS
-from dydx3.starkex.constants import ORDER_PADDING_BITS
-from dydx3.starkex.constants import ORDER_PREFIX
-from dydx3.starkex.constants import ORDER_SIGNATURE_EXPIRATION_BUFFER_HOURS
-from dydx3.starkex.helpers import nonce_from_client_id
-from dydx3.starkex.helpers import to_quantums_exact
-from dydx3.starkex.helpers import to_quantums_round_down
-from dydx3.starkex.helpers import to_quantums_round_up
-from dydx3.starkex.signable import Signable
-from dydx3.starkex.starkex_resources.proxy import get_hash
+from deta3.constants import COLLATERAL_ASSET
+from deta3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
+from deta3.constants import ORDER_SIDE_BUY
+from deta3.constants import SYNTHETIC_ASSET_ID_MAP
+from deta3.constants import SYNTHETIC_ASSET_MAP
+from deta3.starkex.constants import ONE_HOUR_IN_SECONDS
+from deta3.starkex.constants import ORDER_FIELD_BIT_LENGTHS
+from deta3.starkex.constants import ORDER_PADDING_BITS
+from deta3.starkex.constants import ORDER_PREFIX
+from deta3.starkex.constants import ORDER_SIGNATURE_EXPIRATION_BUFFER_HOURS
+from deta3.starkex.helpers import nonce_from_client_id
+from deta3.starkex.helpers import to_quantums_exact
+from deta3.starkex.helpers import to_quantums_round_down
+from deta3.starkex.helpers import to_quantums_round_up
+from deta3.starkex.signable import Signable
+from deta3.starkex.starkex_resources.proxy import get_hash
 
 DECIMAL_CONTEXT_ROUND_DOWN = decimal.Context(rounding=decimal.ROUND_DOWN)
 DECIMAL_CONTEXT_ROUND_UP = decimal.Context(rounding=decimal.ROUND_UP)
@@ -102,7 +102,7 @@ class SignableOrder(Signable):
         # Orders may have a short time-to-live on the orderbook, but we need
         # to ensure their signatures are valid by the time they reach the
         # blockchain. Therefore, we enforce that the signed expiration includes
-        # a buffer relative to the expiration timestamp sent to the dYdX API.
+        # a buffer relative to the expiration timestamp sent to the deta API.
         expiration_epoch_hours = math.ceil(
             float(expiration_epoch_seconds) / ONE_HOUR_IN_SECONDS,
         ) + ORDER_SIGNATURE_EXPIRATION_BUFFER_HOURS

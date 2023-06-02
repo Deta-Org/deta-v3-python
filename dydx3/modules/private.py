@@ -2,27 +2,27 @@ import hmac
 import hashlib
 import base64
 
-from dydx3.constants import COLLATERAL_ASSET
-from dydx3.constants import COLLATERAL_TOKEN_DECIMALS
-from dydx3.constants import FACT_REGISTRY_CONTRACT
-from dydx3.constants import NETWORK_ID_GOERLI
-from dydx3.constants import TIME_IN_FORCE_GTT
-from dydx3.constants import TOKEN_CONTRACTS
-from dydx3.helpers.db import get_account_id
-from dydx3.helpers.request_helpers import epoch_seconds_to_iso
-from dydx3.helpers.request_helpers import generate_now_iso
-from dydx3.helpers.request_helpers import generate_query_path
-from dydx3.helpers.request_helpers import random_client_id
-from dydx3.helpers.request_helpers import iso_to_epoch_seconds
-from dydx3.helpers.request_helpers import json_stringify
-from dydx3.helpers.request_helpers import remove_nones
-from dydx3.helpers.requests import request
-from dydx3.starkex.helpers import get_transfer_erc20_fact
-from dydx3.starkex.helpers import nonce_from_client_id
-from dydx3.starkex.order import SignableOrder
-from dydx3.starkex.withdrawal import SignableWithdrawal
-from dydx3.starkex.conditional_transfer import SignableConditionalTransfer
-from dydx3.starkex.transfer import SignableTransfer
+from deta3.constants import COLLATERAL_ASSET
+from deta3.constants import COLLATERAL_TOKEN_DECIMALS
+from deta3.constants import FACT_REGISTRY_CONTRACT
+from deta3.constants import NETWORK_ID_GOERLI
+from deta3.constants import TIME_IN_FORCE_GTT
+from deta3.constants import TOKEN_CONTRACTS
+from deta3.helpers.db import get_account_id
+from deta3.helpers.request_helpers import epoch_seconds_to_iso
+from deta3.helpers.request_helpers import generate_now_iso
+from deta3.helpers.request_helpers import generate_query_path
+from deta3.helpers.request_helpers import random_client_id
+from deta3.helpers.request_helpers import iso_to_epoch_seconds
+from deta3.helpers.request_helpers import json_stringify
+from deta3.helpers.request_helpers import remove_nones
+from deta3.helpers.requests import request
+from deta3.starkex.helpers import get_transfer_erc20_fact
+from deta3.starkex.helpers import nonce_from_client_id
+from deta3.starkex.order import SignableOrder
+from deta3.starkex.withdrawal import SignableWithdrawal
+from deta3.starkex.conditional_transfer import SignableConditionalTransfer
+from deta3.starkex.transfer import SignableTransfer
 
 
 class Private(object):
@@ -60,10 +60,10 @@ class Private(object):
             data=remove_nones(data),
         )
         headers = {
-            'DYDX-SIGNATURE': signature,
-            'DYDX-API-KEY': self.api_key_credentials['key'],
-            'DYDX-TIMESTAMP': now_iso_string,
-            'DYDX-PASSPHRASE': self.api_key_credentials['passphrase'],
+            'deta-SIGNATURE': signature,
+            'deta-API-KEY': self.api_key_credentials['key'],
+            'deta-TIMESTAMP': now_iso_string,
+            'deta-PASSPHRASE': self.api_key_credentials['passphrase'],
         }
         return request(
             self.host + request_path,
@@ -109,7 +109,7 @@ class Private(object):
 
         :returns: Object containing an array of apiKeys
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'api-keys',
@@ -122,7 +122,7 @@ class Private(object):
 
         :returns: str
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
 
         return self._get('registration', {})
@@ -133,7 +133,7 @@ class Private(object):
 
         :returns: User
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('users', {})
 
@@ -173,7 +173,7 @@ class Private(object):
 
         :returns: User
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._put(
             'users',
@@ -203,7 +203,7 @@ class Private(object):
 
         :returns: Account
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._post(
             'accounts',
@@ -225,7 +225,7 @@ class Private(object):
 
         :returns: Account
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         address = ethereum_address or self.default_address
         if address is None:
@@ -243,7 +243,7 @@ class Private(object):
 
         :returns: Array of accounts for a user
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'accounts',
@@ -283,7 +283,7 @@ class Private(object):
 
         :returns: Array of positions
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'positions',
@@ -350,7 +350,7 @@ class Private(object):
 
         :returns: Array of Orders
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'orders',
@@ -393,7 +393,7 @@ class Private(object):
 
         :returns: Array of ActiveOrders
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'active-orders',
@@ -416,7 +416,7 @@ class Private(object):
 
         :returns: Order
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             '/'.join(['orders', order_id]),
@@ -435,7 +435,7 @@ class Private(object):
 
         :returns: Order
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             '/'.join(['orders/client', client_id]),
@@ -535,7 +535,7 @@ class Private(object):
 
         :returns: Order
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         client_id = client_id or random_client_id()
         if bool(expiration) == bool(expiration_epoch_seconds):
@@ -605,7 +605,7 @@ class Private(object):
 
         :returns: Order
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._delete(
             '/'.join(['orders', order_id]),
@@ -629,7 +629,7 @@ class Private(object):
 
         :returns: Array of orders
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         params = {'market': market} if market else {}
         return self._delete(
@@ -665,7 +665,7 @@ class Private(object):
 
         :returns: Array of ActiveOrders
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._delete(
             'active-orders',
@@ -705,7 +705,7 @@ class Private(object):
 
         :returns: Array of fills
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'fills',
@@ -741,7 +741,7 @@ class Private(object):
 
         :returns: Array of transfers
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'transfers',
@@ -797,7 +797,7 @@ class Private(object):
 
         :returns: Transfer
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         client_id = client_id or random_client_id()
         if bool(expiration) == bool(expiration_epoch_seconds):
@@ -880,7 +880,7 @@ class Private(object):
 
         :returns: Transfer
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         client_id = client_id or random_client_id()
 
@@ -982,7 +982,7 @@ class Private(object):
 
         :returns: Transfer
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         client_id = client_id or random_client_id()
         if bool(expiration) == bool(expiration_epoch_seconds):
@@ -1064,7 +1064,7 @@ class Private(object):
 
         :returns: Array of funding payments
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'funding',
@@ -1091,7 +1091,7 @@ class Private(object):
 
         :returns: Array of historical pnl ticks
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'historical-pnl',
@@ -1109,7 +1109,7 @@ class Private(object):
 
         :returns: Empty object
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._put(
             'emails/send-verification-email',
@@ -1128,7 +1128,7 @@ class Private(object):
 
         :returns: TradingRewards
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'rewards/weight',
@@ -1149,7 +1149,7 @@ class Private(object):
 
         :returns: LiquidityProviderRewards
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'rewards/liquidity-provider',
@@ -1171,7 +1171,7 @@ class Private(object):
 
         :returns: LiquidityRewards
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'rewards/liquidity',
@@ -1188,7 +1188,7 @@ class Private(object):
 
         :returns: RetroactiveMiningRewards
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('rewards/retroactive-mining')
 
@@ -1196,12 +1196,12 @@ class Private(object):
         self,
     ):
         '''
-        Requests tokens on dYdX's staging server.
+        Requests tokens on deta's staging server.
         NOTE: this will not work on Mainnet/Production.
 
         :returns: Transfer
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         if (self.network_id != NETWORK_ID_GOERLI):
             raise ValueError('network_id is not Goerli')
@@ -1216,7 +1216,7 @@ class Private(object):
 
         :returns: PrivateProfile
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('profile/private', {})
 
@@ -1228,7 +1228,7 @@ class Private(object):
 
         :returns: UserLinks
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('users/links', {})
 
@@ -1254,7 +1254,7 @@ class Private(object):
 
         :returns: {}
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._post(
             'users/links',
@@ -1272,7 +1272,7 @@ class Private(object):
 
         :returns: UserLinkRequests
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('users/links/requests', {})
 

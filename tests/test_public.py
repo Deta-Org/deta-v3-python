@@ -1,8 +1,8 @@
 import os
 
-from dydx3 import Client
-from dydx3.constants import MARKET_BTC_USD
-from dydx3.constants import MARKET_STATISTIC_DAY_ONE
+from deta3 import Client
+from deta3.constants import MARKET_BTC_USD
+from deta3.constants import MARKET_STATISTIC_DAY_ONE
 
 from tests.constants import DEFAULT_HOST
 

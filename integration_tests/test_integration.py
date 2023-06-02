@@ -9,12 +9,12 @@ import time
 
 from web3 import Web3
 
-from dydx3 import Client
-from dydx3 import DydxApiError
-from dydx3 import constants
-from dydx3 import epoch_seconds_to_iso
-from dydx3 import generate_private_key_hex_unsafe
-from dydx3 import private_key_to_public_key_pair_hex
+from deta3 import Client
+from deta3 import detaApiError
+from deta3 import constants
+from deta3 import epoch_seconds_to_iso
+from deta3 import generate_private_key_hex_unsafe
+from deta3 import private_key_to_public_key_pair_hex
 
 from tests.constants import DEFAULT_HOST
 from tests.constants import DEFAULT_NETWORK_ID
@@ -76,7 +76,7 @@ class TestIntegration():
                 to_address=ethereum_address,
                 expiration_epoch_seconds=expiration_epoch_seconds,
             )
-        except DydxApiError as e:
+        except detaApiError as e:
             if expected_error not in str(e):
                 raise
 
@@ -97,7 +97,7 @@ class TestIntegration():
                 limit_fee='0.1',
                 expiration=one_minute_from_now_iso,
             )
-        except DydxApiError as e:
+        except detaApiError as e:
             if expected_error not in str(e):
                 raise
 
@@ -243,7 +243,7 @@ class TestIntegration():
         print('...done.')
 
         # Wait for the deposit to be processed.
-        print('Waiting for deposit to be processed on dYdX...')
+        print('Waiting for deposit to be processed on deta...')
         wait_for_condition(
             lambda: len(client.private.get_transfers()['transfers']) > 0,
             True,
@@ -363,7 +363,7 @@ class TestIntegration():
         print('...done.')
 
         # Wait for the withdraw to be processed.
-        print('Waiting for withdraw to be processed on dYdX...')
+        print('Waiting for withdraw to be processed on deta...')
         wait_for_condition(
             lambda: len(client.private.get_transfers()['transfers']) > 0,
             True,
@@ -386,7 +386,7 @@ class TestIntegration():
         print('...done.')
 
         # Wait for the withdraw_to to be processed.
-        print('Waiting for withdraw_to to be processed on dYdX...')
+        print('Waiting for withdraw_to to be processed on deta...')
         wait_for_condition(
             lambda: len(client.private.get_transfers()['transfers']) > 0,
             True,

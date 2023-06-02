@@ -1,7 +1,7 @@
 from web3 import Web3
 
-from dydx3.eth_signing import util
-from dydx3.eth_signing.sign_off_chain_action import SignOffChainAction
+from deta3.eth_signing import util
+from deta3.eth_signing.sign_off_chain_action import SignOffChainAction
 
 EIP712_ETH_PRIVATE_ACTION_STRUCT_STRING = [
     {'type': 'string', 'name': 'method'},
@@ -10,14 +10,14 @@ EIP712_ETH_PRIVATE_ACTION_STRUCT_STRING = [
     {'type': 'string', 'name': 'timestamp'},
 ]
 EIP712_ETH_PRIVATE_ACTION_STRUCT_STRING_STRING = (
-    'dYdX(' +
+    'deta(' +
     'string method,' +
     'string requestPath,' +
     'string body,' +
     'string timestamp' +
     ')'
 )
-EIP712_STRUCT_NAME = 'dYdX'
+EIP712_STRUCT_NAME = 'deta'
 
 
 class SignEthPrivateAction(SignOffChainAction):

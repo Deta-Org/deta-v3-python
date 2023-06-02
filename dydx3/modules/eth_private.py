@@ -1,8 +1,8 @@
-from dydx3.helpers.request_helpers import generate_now_iso
-from dydx3.helpers.request_helpers import generate_query_path
-from dydx3.helpers.request_helpers import json_stringify
-from dydx3.eth_signing import SignEthPrivateAction
-from dydx3.helpers.requests import request
+from deta3.helpers.request_helpers import generate_now_iso
+from deta3.helpers.request_helpers import generate_query_path
+from deta3.helpers.request_helpers import json_stringify
+from deta3.eth_signing import SignEthPrivateAction
+from deta3.helpers.requests import request
 
 
 class EthPrivate(object):
@@ -47,9 +47,9 @@ class EthPrivate(object):
             self.host + request_path,
             method,
             {
-                'DYDX-SIGNATURE': signature,
-                'DYDX-TIMESTAMP': timestamp,
-                'DYDX-ETHEREUM-ADDRESS': ethereum_address,
+                'deta-SIGNATURE': signature,
+                'deta-TIMESTAMP': timestamp,
+                'deta-ETHEREUM-ADDRESS': ethereum_address,
             },
             data,
             self.api_timeout,
@@ -106,7 +106,7 @@ class EthPrivate(object):
 
         :returns: Object containing an apiKey
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._post(
             'api-keys',
@@ -129,7 +129,7 @@ class EthPrivate(object):
 
         :returns: None
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._delete(
             'api-keys',
@@ -161,7 +161,7 @@ class EthPrivate(object):
             positions: array of open positions
         }
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             'recovery',

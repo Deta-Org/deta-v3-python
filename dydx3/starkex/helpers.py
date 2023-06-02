@@ -3,16 +3,16 @@ import hashlib
 
 from web3 import Web3
 
-from dydx3.constants import ASSET_RESOLUTION
-from dydx3.eth_signing.util import strip_hex_prefix
-from dydx3.starkex.constants import ORDER_FIELD_BIT_LENGTHS
-from dydx3.starkex.starkex_resources.python_signature import (
+from deta3.constants import ASSET_RESOLUTION
+from deta3.eth_signing.util import strip_hex_prefix
+from deta3.starkex.constants import ORDER_FIELD_BIT_LENGTHS
+from deta3.starkex.starkex_resources.python_signature import (
     get_random_private_key
 )
-from dydx3.starkex.starkex_resources.python_signature import (
+from deta3.starkex.starkex_resources.python_signature import (
     private_key_to_ec_point_on_stark_curve,
 )
-from dydx3.starkex.starkex_resources.python_signature import (
+from deta3.starkex.starkex_resources.python_signature import (
     private_to_stark_key
 )
 

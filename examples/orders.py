@@ -5,13 +5,13 @@ Usage: python -m examples.orders
 
 import time
 
-from dydx3 import Client
-from dydx3.constants import API_HOST_GOERLI
-from dydx3.constants import MARKET_BTC_USD
-from dydx3.constants import NETWORK_ID_GOERLI
-from dydx3.constants import ORDER_SIDE_BUY
-from dydx3.constants import ORDER_STATUS_OPEN
-from dydx3.constants import ORDER_TYPE_LIMIT
+from deta3 import Client
+from deta3.constants import API_HOST_GOERLI
+from deta3.constants import MARKET_BTC_USD
+from deta3.constants import NETWORK_ID_GOERLI
+from deta3.constants import ORDER_SIDE_BUY
+from deta3.constants import ORDER_STATUS_OPEN
+from deta3.constants import ORDER_TYPE_LIMIT
 from web3 import Web3
 
 # Ganache test address.

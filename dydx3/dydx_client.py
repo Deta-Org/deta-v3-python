@@ -1,15 +1,15 @@
 from web3 import Web3
 
-from dydx3.constants import DEFAULT_API_TIMEOUT, NETWORK_ID_MAINNET
-from dydx3.eth_signing import SignWithWeb3
-from dydx3.eth_signing import SignWithKey
-from dydx3.modules.eth_private import EthPrivate
-from dydx3.modules.eth import Eth
-from dydx3.modules.private import Private
-from dydx3.modules.public import Public
-from dydx3.modules.onboarding import Onboarding
-from dydx3.starkex.helpers import private_key_to_public_key_pair_hex
-from dydx3.starkex.starkex_resources.cpp_signature import (
+from deta3.constants import DEFAULT_API_TIMEOUT, NETWORK_ID_MAINNET
+from deta3.eth_signing import SignWithWeb3
+from deta3.eth_signing import SignWithKey
+from deta3.modules.eth_private import EthPrivate
+from deta3.modules.eth import Eth
+from deta3.modules.private import Private
+from deta3.modules.public import Public
+from deta3.modules.onboarding import Onboarding
+from deta3.starkex.helpers import private_key_to_public_key_pair_hex
+from deta3.starkex.starkex_resources.cpp_signature import (
     get_cpp_lib,
 )
 

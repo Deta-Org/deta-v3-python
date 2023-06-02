@@ -7,11 +7,11 @@ import asyncio
 import json
 import websockets
 
-from dydx3 import Client
-from dydx3.helpers.request_helpers import generate_now_iso
-from dydx3.constants import API_HOST_GOERLI
-from dydx3.constants import NETWORK_ID_GOERLI
-from dydx3.constants import WS_HOST_GOERLI
+from deta3 import Client
+from deta3.helpers.request_helpers import generate_now_iso
+from deta3.constants import API_HOST_GOERLI
+from deta3.constants import NETWORK_ID_GOERLI
+from deta3.constants import WS_HOST_GOERLI
 from web3 import Web3
 
 # Ganache test address.

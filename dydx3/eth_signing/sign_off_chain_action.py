@@ -1,8 +1,8 @@
 from web3 import Web3
 
-from dydx3.eth_signing import util
+from deta3.eth_signing import util
 
-DOMAIN = 'dYdX'
+DOMAIN = 'deta'
 VERSION = '1.0'
 EIP712_DOMAIN_STRING_NO_CONTRACT = (
     'EIP712Domain(' +

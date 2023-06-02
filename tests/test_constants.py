@@ -1,4 +1,4 @@
-from dydx3.constants import (
+from deta3.constants import (
     SYNTHETIC_ASSET_MAP,
     SYNTHETIC_ASSET_ID_MAP,
     ASSET_RESOLUTION,

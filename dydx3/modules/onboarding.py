@@ -2,11 +2,11 @@ import base64
 
 from web3 import Web3
 
-from dydx3.constants import OFF_CHAIN_ONBOARDING_ACTION
-from dydx3.constants import OFF_CHAIN_KEY_DERIVATION_ACTION
-from dydx3.eth_signing import SignOnboardingAction
-from dydx3.helpers.requests import request
-from dydx3.starkex.helpers import private_key_to_public_key_pair_hex
+from deta3.constants import OFF_CHAIN_ONBOARDING_ACTION
+from deta3.constants import OFF_CHAIN_KEY_DERIVATION_ACTION
+from deta3.eth_signing import SignOnboardingAction
+from deta3.helpers.requests import request
+from deta3.starkex.helpers import private_key_to_public_key_pair_hex
 
 
 class Onboarding(object):
@@ -49,8 +49,8 @@ class Onboarding(object):
             self.host + request_path,
             'post',
             {
-                'DYDX-SIGNATURE': signature,
-                'DYDX-ETHEREUM-ADDRESS': ethereum_address,
+                'deta-SIGNATURE': signature,
+                'deta-ETHEREUM-ADDRESS': ethereum_address,
             },
             data,
             self.api_timeout,
@@ -89,7 +89,7 @@ class Onboarding(object):
 
         :returns: { apiKey, user, account }
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         stark_key = stark_public_key or self.stark_public_key
         stark_key_y = (
@@ -123,7 +123,7 @@ class Onboarding(object):
         '''
         Derive a STARK key pair deterministically from an Ethereum key.
 
-        This is the function used by the dYdX frontend to derive a user's
+        This is the function used by the deta frontend to derive a user's
         STARK key pair in a way that is recoverable. Programmatic traders may
         optionally derive their STARK key pair in the same way.
 
@@ -155,7 +155,7 @@ class Onboarding(object):
         Derive API credentials deterministically from an Ethereum key.
 
         This can be used to recover the default API key credentials, which are
-        the same set of credentials used in the dYdX frontend.
+        the same set of credentials used in the deta frontend.
         '''
         signature = self.signer.sign(
             ethereum_address or self.default_address,

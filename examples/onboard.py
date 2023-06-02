@@ -3,9 +3,9 @@
 Usage: python -m examples.onboard
 '''
 
-from dydx3 import Client
-from dydx3.constants import API_HOST_GOERLI
-from dydx3.constants import NETWORK_ID_GOERLI
+from deta3 import Client
+from deta3.constants import API_HOST_GOERLI
+from deta3.constants import NETWORK_ID_GOERLI
 from web3 import Web3
 
 # Ganache test address.

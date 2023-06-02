@@ -1,13 +1,13 @@
 from typing import Optional, Union
 
-from dydx3.starkex.starkex_resources.cpp_signature import check_cpp_lib_path
-from dydx3.starkex.starkex_resources.cpp_signature import cpp_hash
-from dydx3.starkex.starkex_resources.cpp_signature import cpp_verify
-from dydx3.starkex.starkex_resources.python_signature import ECPoint
-from dydx3.starkex.starkex_resources.python_signature import ECSignature
-from dydx3.starkex.starkex_resources.python_signature import py_pedersen_hash
-from dydx3.starkex.starkex_resources.python_signature import py_sign
-from dydx3.starkex.starkex_resources.python_signature import py_verify
+from deta3.starkex.starkex_resources.cpp_signature import check_cpp_lib_path
+from deta3.starkex.starkex_resources.cpp_signature import cpp_hash
+from deta3.starkex.starkex_resources.cpp_signature import cpp_verify
+from deta3.starkex.starkex_resources.python_signature import ECPoint
+from deta3.starkex.starkex_resources.python_signature import ECSignature
+from deta3.starkex.starkex_resources.python_signature import py_pedersen_hash
+from deta3.starkex.starkex_resources.python_signature import py_sign
+from deta3.starkex.starkex_resources.python_signature import py_verify
 
 
 def sign(

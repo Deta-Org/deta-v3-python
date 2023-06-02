@@ -1,16 +1,16 @@
 from collections import namedtuple
 import math
 
-from dydx3.constants import COLLATERAL_ASSET
-from dydx3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
-from dydx3.starkex.constants import ONE_HOUR_IN_SECONDS
-from dydx3.starkex.constants import WITHDRAWAL_FIELD_BIT_LENGTHS
-from dydx3.starkex.constants import WITHDRAWAL_PADDING_BITS
-from dydx3.starkex.constants import WITHDRAWAL_PREFIX
-from dydx3.starkex.helpers import nonce_from_client_id
-from dydx3.starkex.helpers import to_quantums_exact
-from dydx3.starkex.signable import Signable
-from dydx3.starkex.starkex_resources.proxy import get_hash
+from deta3.constants import COLLATERAL_ASSET
+from deta3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
+from deta3.starkex.constants import ONE_HOUR_IN_SECONDS
+from deta3.starkex.constants import WITHDRAWAL_FIELD_BIT_LENGTHS
+from deta3.starkex.constants import WITHDRAWAL_PADDING_BITS
+from deta3.starkex.constants import WITHDRAWAL_PREFIX
+from deta3.starkex.helpers import nonce_from_client_id
+from deta3.starkex.helpers import to_quantums_exact
+from deta3.starkex.signable import Signable
+from deta3.starkex.starkex_resources.proxy import get_hash
 
 StarkwareWithdrawal = namedtuple(
     'StarkwareWithdrawal',

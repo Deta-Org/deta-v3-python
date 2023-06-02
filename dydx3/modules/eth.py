@@ -2,17 +2,17 @@ import json
 import os
 from web3 import Web3
 
-from dydx3.constants import ASSET_RESOLUTION
-from dydx3.constants import COLLATERAL_ASSET
-from dydx3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
-from dydx3.constants import DEFAULT_GAS_AMOUNT
-from dydx3.constants import DEFAULT_GAS_MULTIPLIER
-from dydx3.constants import DEFAULT_GAS_PRICE
-from dydx3.constants import DEFAULT_GAS_PRICE_ADDITION
-from dydx3.constants import MAX_SOLIDITY_UINT
-from dydx3.constants import STARKWARE_PERPETUALS_CONTRACT
-from dydx3.constants import TOKEN_CONTRACTS
-from dydx3.errors import TransactionReverted
+from deta3.constants import ASSET_RESOLUTION
+from deta3.constants import COLLATERAL_ASSET
+from deta3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
+from deta3.constants import DEFAULT_GAS_AMOUNT
+from deta3.constants import DEFAULT_GAS_MULTIPLIER
+from deta3.constants import DEFAULT_GAS_PRICE
+from deta3.constants import DEFAULT_GAS_PRICE_ADDITION
+from deta3.constants import MAX_SOLIDITY_UINT
+from deta3.constants import STARKWARE_PERPETUALS_CONTRACT
+from deta3.constants import TOKEN_CONTRACTS
+from deta3.errors import TransactionReverted
 
 ERC20_ABI = 'abi/erc20.json'
 STARKWARE_PERPETUALS_ABI = 'abi/starkware-perpetuals.json'
@@ -49,13 +49,13 @@ class Eth(object):
         address,
         file_path,
     ):
-        dydx_folder = os.path.join(
+        deta_folder = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             '..',
         )
         return self.web3.eth.contract(
             address=address,
-            abi=json.load(open(os.path.join(dydx_folder, file_path), 'r')),
+            abi=json.load(open(os.path.join(deta_folder, file_path), 'r')),
         )
 
     def get_contract(
@@ -221,7 +221,7 @@ class Eth(object):
         send_options=None,
     ):
         '''
-        Register a STARK key, using a signature provided by dYdX.
+        Register a STARK key, using a signature provided by deta.
 
         :param registration_signature: required
         :type registration_signature: string

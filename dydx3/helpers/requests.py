@@ -2,15 +2,15 @@ import json
 
 import requests
 
-from dydx3.errors import DydxApiError
-from dydx3.helpers.request_helpers import remove_nones
+from deta3.errors import detaApiError
+from deta3.helpers.request_helpers import remove_nones
 
 # TODO: Use a separate session per client instance.
 session = requests.session()
 session.headers.update({
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'User-Agent': 'dydx/python',
+    'User-Agent': 'deta/python',
 })
 
 
@@ -31,7 +31,7 @@ def request(uri, method, headers=None, data_values={}, api_timeout=None):
         timeout=api_timeout
     )
     if not str(response.status_code).startswith('2'):
-        raise DydxApiError(response)
+        raise detaApiError(response)
 
     if response.content:
         return Response(response.json(), response.headers)

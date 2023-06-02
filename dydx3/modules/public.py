@@ -1,6 +1,6 @@
-from dydx3.constants import DEFAULT_API_TIMEOUT
-from dydx3.helpers.request_helpers import generate_query_path
-from dydx3.helpers.requests import request
+from deta3.constants import DEFAULT_API_TIMEOUT
+from deta3.helpers.request_helpers import generate_query_path
+from deta3.helpers.requests import request
 
 
 class Public(object):
@@ -42,7 +42,7 @@ class Public(object):
 
         :returns: Bool
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/v3/users/exists'
         return self._get(
@@ -59,7 +59,7 @@ class Public(object):
 
         :returns: Bool
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/v3/usernames'
         return self._get(uri, {'username': username})
@@ -78,7 +78,7 @@ class Public(object):
 
         :returns: Market array
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/v3/markets'
         return self._get(uri, {'market': market})
@@ -98,7 +98,7 @@ class Public(object):
         :returns: Object containing bid array and ask array of open orders
         for a market
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/orderbook', market])
         return self._get(uri)
@@ -125,7 +125,7 @@ class Public(object):
         :returns: Statistic information for a market, either for all time
         periods or just one.
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = (
             '/'.join(['/v3/stats', market])
@@ -152,7 +152,7 @@ class Public(object):
 
         :returns: Trade array
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/trades', market])
         return self._get(
@@ -177,7 +177,7 @@ class Public(object):
 
         :returns: Array of historical funding for a specific market
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/historical-funding', market])
         return self._get(
@@ -205,7 +205,7 @@ class Public(object):
 
         :returns: All fast withdrawal accounts
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/v3/fast-withdrawals'
         return self._get(
@@ -258,7 +258,7 @@ class Public(object):
 
         :returns: Array of candles
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/candles', market])
         return self._get(
@@ -277,7 +277,7 @@ class Public(object):
 
         :returns: ISO string and Epoch number in seconds with MS of server time
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/v3/time'
         return self._get(uri)
@@ -294,7 +294,7 @@ class Public(object):
 
         :returns: empty object
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._put(
             'emails/verify-email',
@@ -315,7 +315,7 @@ class Public(object):
 
         :returns: PublicRetroactiveMiningRewards
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get(
             '/v3/rewards/public-retroactive-mining',
@@ -332,17 +332,17 @@ class Public(object):
 
         :returns: GlobalConfigVariables
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('/v3/config')
 
     def get_insurance_fund_balance(self):
         '''
-        Get the balance of the dYdX insurance fund
+        Get the balance of the deta insurance fund
 
-        :returns: Balance of the dYdX insurance fund in USD
+        :returns: Balance of the deta insurance fund in USD
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         return self._get('/v3/insurance-fund/balance')
 
@@ -358,7 +358,7 @@ class Public(object):
 
         :returns: PublicProfile
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/profile', publicId])
         return self._get(uri)
@@ -385,7 +385,7 @@ class Public(object):
 
         :returns: HistoricalLeaderboardPnl
 
-        :raises: DydxAPIError
+        :raises: detaAPIError
         '''
         uri = '/'.join(['/v3/accounts/historical-leaderboard-pnls', period])
         return self._get(

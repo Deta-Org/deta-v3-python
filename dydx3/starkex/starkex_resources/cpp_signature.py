@@ -4,7 +4,7 @@ import os
 from typing import Optional, Tuple
 import json
 import math
-from dydx3.starkex.starkex_resources.python_signature import (
+from deta3.starkex.starkex_resources.python_signature import (
     inv_mod_curve_size,
 )
 

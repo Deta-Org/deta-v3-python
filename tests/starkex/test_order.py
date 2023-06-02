@@ -1,8 +1,8 @@
-from dydx3.constants import MARKET_ETH_USD
-from dydx3.constants import NETWORK_ID_GOERLI
-from dydx3.constants import ORDER_SIDE_BUY
-from dydx3.helpers.request_helpers import iso_to_epoch_seconds
-from dydx3.starkex.order import SignableOrder
+from deta3.constants import MARKET_ETH_USD
+from deta3.constants import NETWORK_ID_GOERLI
+from deta3.constants import ORDER_SIDE_BUY
+from deta3.helpers.request_helpers import iso_to_epoch_seconds
+from deta3.starkex.order import SignableOrder
 
 # Test data where the public key y-coordinate is odd.
 MOCK_PUBLIC_KEY = (

@@ -1,8 +1,8 @@
-from dydx3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
-from dydx3.starkex.helpers import deserialize_signature
-from dydx3.starkex.helpers import serialize_signature
-from dydx3.starkex.starkex_resources.proxy import sign
-from dydx3.starkex.starkex_resources.proxy import verify
+from deta3.constants import COLLATERAL_ASSET_ID_BY_NETWORK_ID
+from deta3.starkex.helpers import deserialize_signature
+from deta3.starkex.helpers import serialize_signature
+from deta3.starkex.starkex_resources.proxy import sign
+from deta3.starkex.starkex_resources.proxy import verify
 
 
 class Signable(object):

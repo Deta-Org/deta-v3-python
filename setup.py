@@ -16,24 +16,24 @@ REQUIREMENTS = [
 ]
 
 setup(
-    name='dydx-v3-python',
+    name='deta-v3-python',
     version='2.0.1',
     packages=find_packages(),
     package_data={
-        'dydx3': [
+        'deta3': [
             'abi/*.json',
             'starkex/starkex_resources/*.json',
         ],
     },
-    description='dYdX Python REST API for Limit Orders',
+    description='deta Python REST API for Limit Orders',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    url='https://github.com/dydxprotocol/dydx-v3-python',
-    author='dYdX Trading Inc.',
+    url='https://github.com/detaprotocol/deta-v3-python',
+    author='deta Trading Inc.',
     license='Apache 2.0',
-    author_email='contact@dydx.exchange',
+    author_email='contact@deta.exchange',
     install_requires=REQUIREMENTS,
-    keywords='dydx exchange rest api defi ethereum eth',
+    keywords='deta exchange rest api defi ethereum eth',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',

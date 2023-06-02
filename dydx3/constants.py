@@ -1,8 +1,8 @@
 # ------------ API URLs ------------
-API_HOST_MAINNET = 'https://api.dydx.exchange'
-API_HOST_GOERLI = 'https://api.stage.dydx.exchange'
-WS_HOST_MAINNET = 'wss://api.dydx.exchange/v3/ws'
-WS_HOST_GOERLI = 'wss://api.stage.dydx.exchange/v3/ws'
+API_HOST_MAINNET = 'https://api.deta.exchange'
+API_HOST_GOERLI = 'https://api.stage.deta.exchange'
+WS_HOST_MAINNET = 'wss://api.deta.exchange/v3/ws'
+WS_HOST_GOERLI = 'wss://api.stage.deta.exchange/v3/ws'
 
 # ------------ Ethereum Network IDs ------------
 NETWORK_ID_MAINNET = 1
@@ -310,8 +310,8 @@ TOKEN_CONTRACTS = {
 COLLATERAL_TOKEN_DECIMALS = 6
 
 # ------------ Off-Chain Ethereum-Signed Actions ------------
-OFF_CHAIN_ONBOARDING_ACTION = 'dYdX Onboarding'
-OFF_CHAIN_KEY_DERIVATION_ACTION = 'dYdX STARK Key'
+OFF_CHAIN_ONBOARDING_ACTION = 'deta Onboarding'
+OFF_CHAIN_KEY_DERIVATION_ACTION = 'deta STARK Key'
 
 
 # ------------ API Defaults ------------

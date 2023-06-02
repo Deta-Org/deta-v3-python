@@ -1,8 +1,8 @@
 from web3 import Web3
 
-from dydx3.constants import NETWORK_ID_MAINNET
-from dydx3.eth_signing import util
-from dydx3.eth_signing.sign_off_chain_action import SignOffChainAction
+from deta3.constants import NETWORK_ID_MAINNET
+from deta3.eth_signing import util
+from deta3.eth_signing.sign_off_chain_action import SignOffChainAction
 
 # On mainnet, include an extra onlySignOn parameter.
 EIP712_ONBOARDING_ACTION_STRUCT = [
@@ -10,7 +10,7 @@ EIP712_ONBOARDING_ACTION_STRUCT = [
     {'type': 'string', 'name': 'onlySignOn'},
 ]
 EIP712_ONBOARDING_ACTION_STRUCT_STRING = (
-    'dYdX(' +
+    'deta(' +
     'string action,' +
     'string onlySignOn' +
     ')'
@@ -19,13 +19,13 @@ EIP712_ONBOARDING_ACTION_STRUCT_TESTNET = [
     {'type': 'string', 'name': 'action'},
 ]
 EIP712_ONBOARDING_ACTION_STRUCT_STRING_TESTNET = (
-    'dYdX(' +
+    'deta(' +
     'string action' +
     ')'
 )
-EIP712_STRUCT_NAME = 'dYdX'
+EIP712_STRUCT_NAME = 'deta'
 
-ONLY_SIGN_ON_DOMAIN_MAINNET = 'https://trade.dydx.exchange'
+ONLY_SIGN_ON_DOMAIN_MAINNET = 'https://trade.deta.exchange'
 
 
 class SignOnboardingAction(SignOffChainAction):
@@ -51,7 +51,7 @@ class SignOnboardingAction(SignOffChainAction):
         # On mainnet, include an extra onlySignOn parameter.
         if self.network_id == NETWORK_ID_MAINNET:
             eip712_message['message']['onlySignOn'] = (
-                'https://trade.dydx.exchange'
+                'https://trade.deta.exchange'
             )
 
         return eip712_message

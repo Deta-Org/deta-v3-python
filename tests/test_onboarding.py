@@ -1,8 +1,8 @@
 from web3 import Web3
 
-from dydx3 import Client
-from dydx3.constants import NETWORK_ID_MAINNET
-from dydx3.constants import NETWORK_ID_GOERLI
+from deta3 import Client
+from deta3.constants import NETWORK_ID_MAINNET
+from deta3.constants import NETWORK_ID_GOERLI
 
 from tests.constants import DEFAULT_HOST
 

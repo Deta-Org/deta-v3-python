@@ -1,6 +1,6 @@
 from web3 import Web3
 from web3.auto import w3
-from dydx3 import constants
+from deta3 import constants
 
 PREPEND_DEC = '\x19Ethereum Signed Message:\n32'
 PREPEND_HEX = '\x19Ethereum Signed Message:\n\x20'

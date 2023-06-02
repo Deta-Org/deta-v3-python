@@ -1,25 +1,25 @@
-<p align="center"><img src="https://dydx.exchange/flat.svg" width="256" /></p>
+<p align="center"><img src="https://deta.exchange/flat.svg" width="256" /></p>
 
 <div align="center">
-  <a href='https://pypi.org/project/dydx-v3-python'>
-    <img src='https://img.shields.io/pypi/v/dydx-v3-python.svg' alt='PyPI'/>
+  <a href='https://pypi.org/project/deta-v3-python'>
+    <img src='https://img.shields.io/pypi/v/deta-v3-python.svg' alt='PyPI'/>
   </a>
-  <a href='https://github.com/dydxprotocol/dydx-v3-python/blob/master/LICENSE'>
-    <img src='https://img.shields.io/github/license/dydxprotocol/dydx-v3-python.svg' alt='License' />
+  <a href='https://github.com/detaprotocol/deta-v3-python/blob/master/LICENSE'>
+    <img src='https://img.shields.io/github/license/detaprotocol/deta-v3-python.svg' alt='License' />
   </a>
 </div>
 <br>
 
-Python client for dYdX (v3 API).
+Python client for deta (v3 API).
 
 The library is currently tested against Python versions 2.7, 3.4, 3.5, 3.6, 3.9, and 3.11.
 
 ## Installation
 
-The `dydx-v3-python` package is available on [PyPI](https://pypi.org/project/dydx-v3-python). Install with `pip`:
+The `deta-v3-python` package is available on [PyPI](https://pypi.org/project/deta-v3-python). Install with `pip`:
 
 ```bash
-pip install dydx-v3-python
+pip install deta-v3-python
 ```
 
 ## Getting Started
@@ -31,7 +31,7 @@ The `Client` object can be created with different levels of authentication depen
 No authentication information is required to access public endpoints.
 
 ```python
-from dydx3 import Client
+from deta3 import Client
 from web3 import Web3
 
 #
@@ -140,4 +140,4 @@ docker-compose up # In a separate terminal
 V3_API_HOST=<api-host> tox
 ```
 
-NOTE: `api-host` should be `https://api.stage.dydx.exchange` to test in staging.
+NOTE: `api-host` should be `https://api.stage.deta.exchange` to test in staging.

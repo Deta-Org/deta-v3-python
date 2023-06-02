@@ -3,13 +3,13 @@ import time
 
 from web3 import Web3
 
-from dydx3 import Client
-from dydx3 import DydxApiError
-from dydx3 import SignableWithdrawal
-from dydx3 import constants
-from dydx3 import generate_private_key_hex_unsafe
-from dydx3 import private_key_to_public_key_pair_hex
-from dydx3.helpers.request_helpers import random_client_id
+from deta3 import Client
+from deta3 import detaApiError
+from deta3 import SignableWithdrawal
+from deta3 import constants
+from deta3 import generate_private_key_hex_unsafe
+from deta3 import private_key_to_public_key_pair_hex
+from deta3.helpers.request_helpers import random_client_id
 
 from tests.constants import DEFAULT_HOST
 from tests.constants import DEFAULT_NETWORK_ID
@@ -77,7 +77,7 @@ class TestAuthLevels():
                 to_address=eth_account.address,
                 expiration_epoch_seconds=expiration_epoch_seconds,
             )
-        except DydxApiError as e:
+        except detaApiError as e:
             if expected_error not in str(e):
                 raise
 
@@ -142,7 +142,7 @@ class TestAuthLevels():
                 expiration_epoch_seconds=expiration_epoch_seconds,
                 signature=signature,
             )
-        except DydxApiError as e:
+        except detaApiError as e:
             if expected_error not in str(e):
                 raise
 
@@ -197,7 +197,7 @@ class TestAuthLevels():
             )
 
         # If the Ethereum address was already onboarded, ignore the error.
-        except DydxApiError:
+        except detaApiError:
             pass
 
         # Register and then revoke a second API key.
@@ -238,7 +238,7 @@ class TestAuthLevels():
             )
 
         # If the Ethereum address was already onboarded, ignore the error.
-        except DydxApiError:
+        except detaApiError:
             pass
 
         # Register and then revoke a second API key.

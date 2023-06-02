@@ -1,7 +1,7 @@
 import eth_account
 
-from dydx3.constants import SIGNATURE_TYPE_NO_PREPEND
-from dydx3.eth_signing import util
+from deta3.constants import SIGNATURE_TYPE_NO_PREPEND
+from deta3.eth_signing import util
 
 
 class Signer(object):

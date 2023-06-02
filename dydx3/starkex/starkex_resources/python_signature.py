@@ -122,7 +122,7 @@ def generate_k_rfc6979(msg_hash: int, priv_key: int, seed: Optional[int] = None)
  # Copied from:
  # https://github.com/starkware-libs/starkex-resources/blob/0f08e6c55ad88c93499f71f2af4a2e7ae0185cdf/crypto/starkware/crypto/signature/signature.py
  #
- # Changes made by dYdX to function name only.
+ # Changes made by deta to function name only.
 
 def py_sign(msg_hash: int, priv_key: int, seed: Optional[int] = None) -> ECSignature:
     # Note: msg_hash must be smaller than 2**N_ELEMENT_BITS_ECDSA.
@@ -185,7 +185,7 @@ def mimic_ec_mult_air(m: int, point: ECPoint, shift_point: ECPoint) -> ECPoint:
  # Copied from:
  # https://github.com/starkware-libs/starkex-resources/blob/0f08e6c55ad88c93499f71f2af4a2e7ae0185cdf/crypto/starkware/crypto/signature/signature.py
  #
- # Changes made by dYdX to function name only.
+ # Changes made by deta to function name only.
 
 def py_verify(msg_hash: int, r: int, s: int, public_key: Union[int, ECPoint]) -> bool:
     # Compute w = s^-1 (mod EC_ORDER).
@@ -245,7 +245,7 @@ def py_verify(msg_hash: int, r: int, s: int, public_key: Union[int, ECPoint]) ->
  # Copied from:
  # https://github.com/starkware-libs/starkex-resources/blob/0f08e6c55ad88c93499f71f2af4a2e7ae0185cdf/crypto/starkware/crypto/signature/signature.py
  #
- # Changes made by dYdX to function name only.
+ # Changes made by deta to function name only.
 
 def py_pedersen_hash(*elements: int) -> int:
     return pedersen_hash_as_point(*elements)[0]
