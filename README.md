@@ -1,15 +1,3 @@
-<p align="center"><img src="https://deta.exchange/flat.svg" width="256" /></p>
-
-<div align="center">
-  <a href='https://pypi.org/project/deta-v3-python'>
-    <img src='https://img.shields.io/pypi/v/deta-v3-python.svg' alt='PyPI'/>
-  </a>
-  <a href='https://github.com/detaprotocol/deta-v3-python/blob/master/LICENSE'>
-    <img src='https://img.shields.io/github/license/detaprotocol/deta-v3-python.svg' alt='License' />
-  </a>
-</div>
-<br>
-
 Python client for deta (v3 API).
 
 The library is currently tested against Python versions 2.7, 3.4, 3.5, 3.6, 3.9, and 3.11.
